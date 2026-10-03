@@ -1,219 +1,748 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Írcaro Seixas - Currículo</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
-        type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Írcaro Seixas · QA Engineer</title>
+<meta name="description" content="Portfólio de Írcaro Seixas, QA Engineer e SDET: automação de testes de API, causa raiz em sistemas financeiros, código de produção e projetos autorais.">
+<meta name="author" content="Írcaro Seixas">
+<meta name="theme-color" content="#0b0a08">
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+<meta property="og:title" content="Írcaro Seixas · QA Engineer">
+<meta property="og:description" content="Qualidade que entra no código, não só no relatório de bug.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ircaro.github.io/">
+<meta property="og:image" content="https://ircaro.github.io/assets/img/profile.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script>
+(function(){
+  var d=document.documentElement;
+  d.classList.add('js');
+  try{
+    var t=localStorage.getItem('pf-theme'); if(t==='light'||t==='dark') d.setAttribute('data-theme',t);
+    var l=localStorage.getItem('pf-lang'); if(l==='en') d.setAttribute('data-lang-init','en');
+  }catch(e){}
+})();
+</script>
+<style>
+  :root{
+    --bg:#0b0a08; --bg2:#121110; --card:#151411; --card2:#11100d; --line:#26241e; --line2:#36332b;
+    --txt:#f5f3ec; --mut:#aba697; --dim:#716c60;
+    --acc:#ffd60a; --acc2:#fff1a8; --fill:#ffd60a; --fill2:#f5f3ec; --fill-ink:#0b0a08;
+    --ok:#4ade80; --warn:#ffd60a; --err:#f87171;
+    --glow:rgba(255,214,10,.10); --glow2:rgba(255,255,255,.05); --gridline:rgba(255,240,200,.055);
+    --display:"Sora","Segoe UI",system-ui,sans-serif;
+    --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"Cascadia Code",Consolas,monospace;
+    color-scheme:dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#fafaf6; --bg2:#f2f1ea; --card:#ffffff; --card2:#f8f7f1; --line:#e4e2d8; --line2:#cfccbf;
+    --txt:#0e0d0b; --mut:#4a473f; --dim:#7d796c;
+    --acc:#7a5c00; --acc2:#0e0d0b; --fill:#ffd60a; --fill2:#0e0d0b; --fill-ink:#0e0d0b;
+    --ok:#15803d; --warn:#7a5c00; --err:#c2410c;
+    --glow:rgba(255,214,10,.22); --glow2:rgba(0,0,0,.04); --gridline:rgba(20,18,10,.06);
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--body);font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--acc);text-decoration:none}
+  a:hover{text-decoration:underline}
+  b,strong{color:var(--txt);font-weight:600}
+  button{font-family:inherit}
+  :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+  .shell{max-width:1120px;margin:0 auto;padding-inline:20px}
+  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+  .mono{font-family:var(--mono)}
 
-    <meta property="og:title" content="Írcaro Seixas" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="QA Software Analyst" />
-    <meta property="og:url" content="https://ircaro.github.io/" />
-    <meta property="og:image" content="https://ircaro.github.io/assets/img/profile.jpg" />
+  #progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);
+    background:var(--fill);z-index:60}
 
+  .nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav .shell{display:flex;align-items:center;gap:8px 20px;min-height:62px;flex-wrap:wrap}
+  .brand{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--txt);display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .brand:hover{text-decoration:none}
+  .brand .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2.4s infinite}
+  .brand .path{color:var(--dim);font-weight:400}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 55%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+  .links{display:flex;gap:2px;margin-left:auto}
+  .links a{color:var(--mut);font-size:14px;padding:6px 11px;border-radius:7px;white-space:nowrap}
+  .links a:hover{color:var(--txt);background:var(--card);text-decoration:none}
+  .ctrls{display:flex;gap:8px;align-items:center}
+  .seg{display:flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
+  .seg button{background:none;border:0;color:var(--mut);font-family:var(--mono);font-size:12px;font-weight:600;padding:6px 10px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--fill);color:var(--fill-ink)}
+  .icon-btn{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line2);border-radius:8px;background:none;color:var(--mut);cursor:pointer}
+  .icon-btn:hover{color:var(--txt);border-color:var(--acc)}
+  .icon-btn svg{width:16px;height:16px}
+  :root[data-theme="light"] .i-sun{display:none}
+  :root:not([data-theme="light"]) .i-moon{display:none}
+
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .layer{position:absolute;inset:-160px 0 -160px 0;pointer-events:none;will-change:transform}
+  .layer.grid{background-image:linear-gradient(var(--gridline) 1px,transparent 1px),linear-gradient(90deg,var(--gridline) 1px,transparent 1px);
+    background-size:44px 44px;mask-image:radial-gradient(ellipse 80% 70% at 60% 40%,#000 30%,transparent 80%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 70% at 60% 40%,#000 30%,transparent 80%)}
+  .layer.glow{background:radial-gradient(600px 380px at 78% 30%,var(--glow),transparent 70%),radial-gradient(520px 360px at 12% 80%,var(--glow2),transparent 70%)}
+  .layer.traces svg{width:100%;height:100%}
+  .traces path{fill:none;stroke:var(--acc);stroke-opacity:.16;stroke-width:1.2}
+  .traces path.v{stroke:var(--acc2)}
+  .traces circle{fill:var(--acc);fill-opacity:.35}
+  .hero-in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:88px 80px}
+  .hero-in > *{min-width:0}
+  .chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 35%,var(--line));background:color-mix(in srgb,var(--acc) 7%,transparent);
+    padding:5px 12px;border-radius:99px}
+  .chip i{width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block;flex:none}
+  .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:20px 0 18px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  :root[data-theme="light"] .hero h1 em{background:linear-gradient(transparent 58%,var(--fill) 58%,var(--fill) 90%,transparent 90%);
+    -webkit-background-clip:border-box;background-clip:border-box;color:var(--txt);padding-inline:2px}
+  .hero .role{font-size:18px;color:var(--mut);margin:0 0 14px;max-width:60ch}
+  .hero .pitch{color:var(--mut);margin:0;max-width:62ch}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px;border:1px solid transparent;cursor:pointer}
+  .btn:hover{text-decoration:none}
+  .btn.pri{background:var(--fill);color:var(--fill-ink);box-shadow:0 8px 28px -12px var(--fill)}
+  .btn.pri:hover{filter:brightness(1.08)}
+  .btn.sec{border-color:var(--line2);color:var(--txt);background:color-mix(in srgb,var(--card) 70%,transparent)}
+  .btn.sec:hover{border-color:var(--acc)}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+
+  .trace{background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid var(--line2);border-radius:14px;overflow:hidden;
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+  .trace-hd{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--dim)}
+  .trace-hd .id{color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .trace-hd .tst{margin-left:auto;color:var(--ok);display:flex;align-items:center;gap:6px}
+  .trace-hd .tst i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+  .axis{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:8px 16px 0;font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+  .axis .ticks{display:flex;justify-content:space-between}
+  .spans{padding:8px 16px 14px;display:flex;flex-direction:column;gap:7px}
+  .span{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:10px;font-family:var(--mono);font-size:12px}
+  .span .nm{color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .span .nm .svc{color:var(--dim)}
+  .span .track{position:relative;height:18px;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),var(--line) calc(25% - 1px) 25%)}
+  .span .bar{position:absolute;top:3px;height:12px;border-radius:3px;background:var(--fill);left:var(--s);width:var(--w);transform-origin:0 50%}
+  .span .bar.v{background:var(--fill2)}
+  .span .bar.e{background:var(--err)}
+  .span .bar.o{background:var(--ok)}
+  .span .lbl{position:absolute;top:0;left:calc(var(--s) + var(--w) + 6px);font-size:10.5px;color:var(--dim);white-space:nowrap;line-height:18px}
+  .span .lbl.r{left:auto;right:calc(100% - var(--s) + 6px)}
+  .span .lbl.e{color:var(--err)}
+  .trace-ft{border-top:1px solid var(--line);padding:10px 16px;font-family:var(--mono);font-size:11.5px;color:var(--dim);display:flex;flex-wrap:wrap;gap:6px 16px}
+  .trace-ft b{color:var(--txt);font-weight:500}
+  .js .trace .bar{transform:scaleX(0);transition:transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i)*170ms + 250ms)}
+  .js .trace .lbl{opacity:0;transition:opacity .4s;transition-delay:calc(var(--i)*170ms + 750ms)}
+  .js .trace.go .bar{transform:scaleX(1)}
+  .js .trace.go .lbl{opacity:1}
+  .cap{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:10px;text-align:right}
+
+  section{padding-block:96px;border-bottom:1px solid var(--line);position:relative}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--acc);letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--fill)}
+  section h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.025em;line-height:1.12;margin:14px 0 14px;font-weight:700;max-width:24ch}
+  .lead{color:var(--mut);max-width:70ch;margin:0 0 36px}
+
+  .stats{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+  .st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px;position:relative;overflow:hidden}
+  .st::after{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--fill),transparent 70%);opacity:.8}
+  .st .n{font-family:var(--display);font-size:44px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--txt);font-variant-numeric:tabular-nums}
+  .st .l{font-size:14px;color:var(--mut);margin-top:10px}
+
+  .pil{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+  .p{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;transition:border-color .2s,transform .2s}
+  .p:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .p .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2)}
+  .p h3{font-size:20px;letter-spacing:-.015em;margin:10px 0 8px}
+  .p p{margin:0;color:var(--mut);font-size:15px}
+
+  .cases{display:flex;flex-direction:column;gap:18px}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .case-hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:16px 24px;border-bottom:1px solid var(--line);background:var(--card2)}
+  .case-hd .dom{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px;
+    color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 30%,var(--line))}
+  .case-hd h3{font-size:19px;letter-spacing:-.015em;flex:1 1 280px}
+  .case-bd{display:grid;grid-template-columns:repeat(3,1fr)}
+  .case-bd > div{padding:20px 24px}
+  .case-bd > div + div{border-left:1px solid var(--line)}
+  .case-bd .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+  .case-bd .k::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--line2)}
+  .case-bd .res .k::before{background:var(--ok)}
+  .case-bd .act .k::before{background:var(--acc)}
+  .case-bd .prob .k::before{background:var(--err)}
+  .case-bd p{margin:0;color:var(--mut);font-size:14.5px}
+  .case.hl{border-color:color-mix(in srgb,var(--acc) 40%,var(--line))}
+  .case.hl .case-hd{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 9%,var(--card2)),var(--card2))}
+
+  .tools,.projs{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+  .projs{grid-template-columns:repeat(2,1fr)}
+  .tool,.pr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
+  .tool:hover,.pr:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .tool h3,.pr h3{font-size:18px;letter-spacing:-.01em}
+  .tool p,.pr p{margin:0;color:var(--mut);font-size:14.5px;flex:1}
+  .stk{font-family:var(--mono);font-size:11.5px;color:var(--dim);padding-top:12px;border-top:1px dashed var(--line2)}
+  .pr .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .badge{font-family:var(--mono);font-size:10.5px;padding:3px 9px;border-radius:99px;white-space:nowrap;border:1px solid}
+  .badge.live{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent);background:color-mix(in srgb,var(--ok) 9%,transparent)}
+  .badge.wip{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent);background:color-mix(in srgb,var(--warn) 9%,transparent)}
+  .lks{display:flex;flex-wrap:wrap;gap:8px}
+  .lks a{font-family:var(--mono);font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--line2);color:var(--txt)}
+  .lks a:hover{border-color:var(--acc);text-decoration:none}
+  .lks a.go{color:var(--acc);border-color:color-mix(in srgb,var(--acc) 45%,var(--line2))}
+  .note{margin-top:18px;border:1px dashed var(--line2);border-radius:12px;padding:16px 20px;color:var(--mut);font-size:14.5px}
+
+  .sk{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+  .sk .g{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .sk h4{margin:0 0 12px;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+  .pills{display:flex;flex-wrap:wrap;gap:7px}
+  .pills span{font-family:var(--mono);font-size:12.5px;padding:4px 10px;border-radius:7px;background:var(--bg2);border:1px solid var(--line);color:var(--txt)}
+
+  .tl{position:relative;padding-left:30px}
+  .tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--fill),var(--line2) 70%,transparent)}
+  .job{position:relative;padding-bottom:36px}
+  .job:last-child{padding-bottom:0}
+  .job::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--fill)}
+  .job .when{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.04em}
+  .job h3{font-size:19px;margin:6px 0 6px;letter-spacing:-.01em}
+  .job ul{margin:6px 0 0;padding-left:18px;color:var(--mut);font-size:15px}
+  .job li{margin:5px 0}
+  .two{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+  .two > *{min-width:0}
+
+  .ct{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+  .ct a{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;color:var(--txt);display:flex;flex-direction:column;gap:4px;overflow-wrap:anywhere}
+  .ct a:hover{border-color:var(--acc);text-decoration:none}
+  .ct a span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  footer{padding-block:36px 48px;color:var(--dim);font-size:13px}
+  footer .shell{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+  .js .rv.in{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .hero-in{grid-template-columns:1fr;gap:40px;padding-block:56px 56px}
+    .stats,.tools,.sk{grid-template-columns:repeat(2,1fr)}
+    .case-bd{grid-template-columns:1fr}
+    .case-bd > div + div{border-left:0;border-top:1px solid var(--line)}
+    .two{grid-template-columns:1fr;gap:72px}
+    .ctrls{margin-left:auto}
+    .links{order:3;width:100%;margin:0 -8px;padding:0 0 8px;overflow-x:auto;scrollbar-width:none}
+    .links::-webkit-scrollbar{display:none}
+  }
+  @media (max-width:640px){
+    .shell{padding-inline:16px}
+    section{padding-block:64px}
+    .stats,.tools,.sk,.pil,.projs,.ct{grid-template-columns:1fr}
+    .span,.axis{grid-template-columns:96px 1fr;gap:8px}
+    .span .lbl{display:none}
+    .brand .path{display:none}
+    .st .n{font-size:38px}
+    .case-hd,.case-bd > div{padding-inline:18px}
+    .p,.tool,.pr{padding:20px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .brand .pulse{animation:none}
+    .js .rv,.js .trace .bar,.js .trace .lbl{opacity:1;transform:none;transition:none}
+    .p,.tool,.pr{transition:none}
+  }
+</style>
 </head>
+<body>
+<div id="progress" aria-hidden="true"></div>
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="sideNav">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <span class="d-block d-lg-none">Írcaro Seixas</span>
-            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-                    src="assets/img/profile.jpg" alt="..." /></span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experiência</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Educação</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interesses</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projetos</a></li>
-            </ul>
-        </div>
+<header class="nav">
+  <div class="shell">
+    <a class="brand" href="#top" aria-label="Írcaro Seixas"><span class="pulse"></span>ircaro<span class="path">@qa:~</span></a>
+    <nav class="links" aria-label="Seções" data-i18n-aria="nav.aria">
+      <a href="#atuacao" data-i18n="nav.how">Atuação</a>
+      <a href="#casos" data-i18n="nav.cases">Casos</a>
+      <a href="#ferramental" data-i18n="nav.tools">Ferramental</a>
+      <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#trajetoria" data-i18n="nav.career">Trajetória</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
     </nav>
-    <!-- Page Content-->
-    <div class="container-fluid p-0">
-        <!-- About-->
-        <section class="resume-section" id="about">
-            <div class="resume-section-content">
-                <h1 class="mb-0">
-                    Írcaro
-                    <span class="text-primary">Seixas</span>
-                </h1>
-                <div class="subheading mb-5">
-                    Salvador/BA • 71 99601-8806 •
-                    <a href="mailto:name@email.com">ircaro.th@gmail.com</a>
-                </div>
-                <p class="lead mb-5">Experiência com programação back-end e análise de qualidade de Softwares, também já pratiquei um pouco de desenvolvimento Web utilizando ferramentas que possibilitasse uma responsividade entre os diversos dispositivos.</p>
-                <div class="social-icons">
-                    <a class="social-icon" href=https://linkedin.com/in/ircaro><i class="fab fa-linkedin-in"></i></a>
-                    <a class="social-icon" href=https://github.com/Ircaro><i class="fab fa-github"></i></a>
-                    <a class="social-icon" href=https://wa.me/5571996018806><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Experience-->
-        <section class="resume-section" id="experience">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Experiência</h2>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Analista de Testes Junior</h3>
-                        <div class="subheading mb-3">Avansys Tecnologia</div>
-                        <p>- Realizando testes manuais de regressão e exploratórios nos sites do nosso cliente; <br>
-                        - Reportando erros e sugerindo melhorias.</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Dezembro 2021 - Atual</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Analista de Qualidade</h3>
-                        <div class="subheading mb-3">BRISA</div>
-                        <p>
-                        - Atuando como backup de líder de grupo; <br>
-                        - Realizando testes manuais, funcionais, regressão, instalação e testes exploratórios. Simulação de casos de testes, UI e reporte de issues.
-                        </p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Novembro 2020 - Novembro 2021</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Analista de Relacionamento Digital</h3>
-                        <div class="subheading mb-3">Atento</div>
-                        <p>- Atendimento de clientes da Credicard através do Chat; <br>
-                        - Criação de planilhas (Excel) para monitoramento de resultados e documentos para consulta de informações (Word); <br>
-                        - Auxilio nas tarefas do(a) supervisor(a);
-                            </p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Outubro 2018 - Novembro 2020</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Auxiliar Administrativo</h3>
-                        <div class="subheading mb-3">M Service</div>
-                        <p>- Recebimento e conferência do fundo fixo, encaminhamento para pagamento; <br>
-                        - Cadastro e elaboração de relatório das notas fiscais para o setor financeiro.
-                        </p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Janeiro 2017 - Dezembro 2018</span></div>
-                </div>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Education-->
-        <section class="resume-section" id="education">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Educação</h2>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Universidade Federal da Bahia</h3>
-                        <div class="subheading mb-3">Ciência e Tecnologia</div>
-                        <!-- <div>Computer Science - Web Development Track</div>
-                        <p>GPA: 3.23</p> -->
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Janeiro 2018 - Dezembro 2023</span></div>
-                </div>
-                <!--
-                <div class="d-flex flex-column flex-md-row justify-content-between">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Escola Estadual Marquês de Maricá</h3>
-                        <div class="subheading mb-3">Ensino Médio Completo</div>
-                         <p>GPA: 3.56</p> 
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">Janeiro 2014 - Dezembro 2015</span></div>
-                </div>-->
-            </div> 
-        </section>
-        <hr class="m-0" />
-        <!-- Skills-->
-        <section class="resume-section" id="skills">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Habilidades</h2>
-                <div class="subheading mb-3">Linguagens de Programação & Ferramentas</div>
-                <ul class="list-inline dev-icons">
-                    <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-git"></i></li> 
-                    <li class="list-inline-item"><i class="fab fa-github"></i></li>   
-                    <li class="list-inline-item"><i class="fab fa-linkedin"></i></li>  
-                    <li class="list-inline-item"><i class="fab fa-discord"></i></li>     
-                </ul>
-
-                <!--
-                <div class="subheading mb-3">Workflow</div>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Mobile-First, Responsive Design
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Cross Browser Testing & Debugging
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Cross Functional Teams
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Agile Development & Scrum
-                    </li>
-                </ul>
-                -->
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Interests-->
-        <section class="resume-section" id="interests">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Interesses</h2>
-                <p>Além de ser um desenvolvedor, sou um jovem curioso, autodidata, amante da tecnologia e em constante busca de conhecimento na área da tecnologia. Gosto de ler, estudar, jogar, assistir e codar. </p>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Projects-->
-        <section class="resume-section" id="projects">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Projetos</h2>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <a class="list-group-item list-group-item-action" href="https://github.com/Ircaro/ircaro.github.io/tree/main/pongbolim">Pongbolim</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="list-group-item list-group-item-action" href="https://github.com/Ircaro/ircaro.github.io/tree/main/flappy-ball">Flappy Ball</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="list-group-item list-group-item-action" href="https://github.com/Ircaro/Sistema_Marcacao_de_Consultas">Sistema para marcação de consultas</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="list-group-item list-group-item-action" href="https://github.com/Ircaro/Calculadora_de_vetoriais">Calculadora de vetoriais</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
+    <div class="ctrls">
+      <div class="seg" role="group" aria-label="Idioma" data-i18n-aria="lang.aria">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="themeBtn" aria-label="Alternar tema claro e escuro" data-i18n-aria="theme.aria">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-</body>
+  </div>
+</header>
 
+<main id="top">
+<div class="hero">
+  <div class="layer grid" data-depth="0.18"></div>
+  <div class="layer glow" data-depth="0.08"></div>
+  <div class="layer traces" data-depth="0.38" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M-20 620 H220 L260 580 H520 L560 620 H760"/>
+      <path class="v" d="M1220 180 H980 L940 220 H760 L720 260 H600"/>
+      <path d="M140 120 H360 L400 160 H520"/>
+      <path class="v" d="M880 700 H1040 L1080 660 H1220"/>
+      <circle cx="760" cy="620" r="4"/><circle cx="600" cy="260" r="4"/><circle cx="520" cy="160" r="4"/><circle cx="880" cy="700" r="4"/>
+    </svg>
+  </div>
+
+  <div class="shell hero-in">
+    <div>
+      <span class="chip rv"><i></i>QA Engineer · SDET · Salvador, BA</span>
+      <h1 class="rv" style="--d:80ms" data-i18n="hero.title">Qualidade que entra no <em>código</em>, não só no relatório de bug.</h1>
+      <p class="role rv" style="--d:160ms" data-i18n="hero.role">Quase seis anos em QA, quase quatro deles numa fintech de pagamentos.</p>
+      <p class="pitch rv" style="--d:220ms" data-i18n="hero.pitch">Comecei em teste manual e migrei para engenharia de qualidade. Hoje eu <b>automatizo testes de API</b>, <b>corrijo em produção o defeito que encontro</b> (TypeScript e C#, em cinco repositórios diferentes) e atuo antes do código existir, em refinamento e protótipo, pra que o problema não chegue a ser construído. Também construo ferramental próprio de QA assistido por IA.</p>
+      <div class="ctas rv" style="--d:300ms">
+        <a class="btn pri" href="#casos"><span data-i18n="hero.cta1">Ver casos reais</span> <span aria-hidden="true">→</span></a>
+        <a class="btn sec" href="#contato" data-i18n="hero.cta2">Fale comigo</a>
+      </div>
+      <div class="meta rv" style="--d:360ms">
+        <span>TypeScript · C# · SQL</span><span>PactumJS · Mocha</span><span data-i18n="hero.lang">Inglês intermediário</span>
+      </div>
+    </div>
+
+    <div class="rv" style="--d:200ms">
+      <div class="trace" id="trace" role="img" aria-label="Trace ilustrativo de uma investigação de bug, do report à produção" data-i18n-aria="trace.aria">
+        <div class="trace-hd"><span class="id">trace · bug-investigation</span><span class="tst"><i></i><span data-i18n="trace.status">resolvido</span></span></div>
+        <div class="axis"><span>span</span><div class="ticks"><span>0</span><span>¼</span><span>½</span><span>¾</span><span>1</span></div></div>
+        <div class="spans">
+          <div class="span"><span class="nm" data-i18n="trace.s1">report <span class="svc">· slack</span></span><div class="track"><span class="bar" style="--s:0%;--w:6%;--i:0"></span><span class="lbl" style="--s:0%;--w:6%;--i:0" data-i18n="trace.l1">"não salva"</span></div></div>
+          <div class="span"><span class="nm" data-i18n="trace.s2">reproduzir <span class="svc">· qa</span></span><div class="track"><span class="bar v" style="--s:6%;--w:14%;--i:1"></span><span class="lbl" style="--s:6%;--w:14%;--i:1" data-i18n="trace.l2">reproduzido</span></div></div>
+          <div class="span"><span class="nm" data-i18n="trace.s3">rede <span class="svc">· 3 chamadas</span></span><div class="track"><span class="bar" style="--s:20%;--w:18%;--i:2"></span><span class="lbl" style="--s:20%;--w:18%;--i:2">PUT ×3</span></div></div>
+          <div class="span"><span class="nm">bank-account <span class="svc">· api</span></span><div class="track"><span class="bar e" style="--s:30%;--w:8%;--i:3"></span><span class="lbl e" style="--s:30%;--w:8%;--i:3">400 pixKey</span></div></div>
+          <div class="span"><span class="nm" data-i18n="trace.s5">causa raiz <span class="svc">· payload</span></span><div class="track"><span class="bar v" style="--s:38%;--w:20%;--i:4"></span><span class="lbl" style="--s:38%;--w:20%;--i:4">"" ≠ null</span></div></div>
+          <div class="span"><span class="nm">fix + MR <span class="svc">· admin</span></span><div class="track"><span class="bar" style="--s:58%;--w:24%;--i:5"></span><span class="lbl r" style="--s:58%;--w:24%;--i:5">pixKey: null</span></div></div>
+          <div class="span"><span class="nm">deploy <span class="svc">· prod</span></span><div class="track"><span class="bar o" style="--s:82%;--w:18%;--i:6"></span><span class="lbl r" style="--s:82%;--w:18%;--i:6">✓ merged</span></div></div>
+        </div>
+        <div class="trace-ft"><span data-i18n="trace.f1"><b>1</b> sintoma</span><span data-i18n="trace.f2"><b>2</b> causas</span><span data-i18n="trace.f3"><b>0</b> passos manuais de contorno</span></div>
+      </div>
+      <div class="cap" data-i18n="trace.cap">trace ilustrativo, baseado em um caso real</div>
+    </div>
+  </div>
+</div>
+
+<section id="numeros">
+  <div class="shell">
+    <div class="eyebrow rv" data-i18n="num.eye">em números</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="num.title">O que aparece no histórico, não na autodescrição</h2>
+    <div class="stats" style="margin-top:36px">
+      <div class="st rv"><div class="n" data-count="96">96</div><div class="l" data-i18n="num.1">Merge Requests de minha autoria no GitLab da empresa, 79 já mergeados</div></div>
+      <div class="st rv" style="--d:70ms"><div class="n" data-count="5">5</div><div class="l" data-i18n="num.2">repositórios distintos em que entrego código, entre backend .NET, APIs Node e painéis React</div></div>
+      <div class="st rv" style="--d:140ms"><div class="n" data-count="136">136</div><div class="l" data-i18n="num.3">commits em 2026 nos dois serviços de backend mais críticos do fluxo comercial</div></div>
+      <div class="st rv"><div class="n" data-count="2">2</div><div class="l" data-i18n="num.4">linguagens de produção no dia a dia: TypeScript e C#</div></div>
+      <div class="st rv" style="--d:70ms"><div class="n" data-count="3">3</div><div class="l" data-i18n="num.5">ferramentas internas de QA assistido por IA criadas por mim, uma delas publicando relatório automático para o time</div></div>
+      <div class="st rv" style="--d:140ms"><div class="n" data-count="4">4</div><div class="l" data-i18n="num.6">projetos autorais fora do trabalho, de calculadora de imposto a motor de jogo</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="atuacao">
+  <div class="shell">
+    <div class="eyebrow rv" data-i18n="how.eye">como eu atuo</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="how.title">Quatro frentes, e nenhuma delas é só executar caso de teste</h2>
+    <div class="pil" style="margin-top:36px">
+      <div class="p rv">
+        <div class="tag" data-i18n="how.t1">diagnóstico</div>
+        <h3 data-i18n="how.h1">Causa raiz atravessando sistemas</h3>
+        <p data-i18n="how.p1">Não paro no "está errado na tela". Sigo o dado do front até o serviço legado e o banco, e digo em qual camada o defeito nasceu. É o que me torna a pessoa consultada quando ninguém consegue explicar o comportamento de um fluxo financeiro.</p>
+      </div>
+      <div class="p rv" style="--d:80ms">
+        <div class="tag" data-i18n="how.t2">automação</div>
+        <h3 data-i18n="how.h2">Testes de API que sobrevivem à manutenção</h3>
+        <p data-i18n="how.p2">Suíte em PactumJS, Mocha e TypeScript com services, data builders e factories reutilizáveis. Refatorei a arquitetura dos testes (de factories para data builders, com reorganização do core compartilhado) justamente pra reduzir o custo de manter.</p>
+      </div>
+      <div class="p rv">
+        <div class="tag">shift left</div>
+        <h3 data-i18n="how.h3">Prevenção antes de existir código</h3>
+        <p data-i18n="how.p3">Entro no refinamento e no protótipo trazendo o lado técnico: como o front conversa com o back, o que pode ou não ficar no cliente, qual integração quebra. Bug evitado não vira estatística, mas vira prazo cumprido.</p>
+      </div>
+      <div class="p rv" style="--d:80ms">
+        <div class="tag" data-i18n="how.t4">ferramental</div>
+        <h3 data-i18n="how.h4">Construo a ferramenta que faltava</h3>
+        <p data-i18n="how.p4">Quando um processo depende de disciplina humana, eu automatizo a verificação. Auditoria de board, execução de teste de API sob demanda e acesso controlado a banco viraram ferramentas de uso diário, não recomendações num documento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="casos">
+  <div class="shell">
+    <div class="eyebrow rv" data-i18n="cases.eye">casos reais</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="cases.title">Trabalho de fintech, descrito sem dado de cliente</h2>
+    <p class="lead rv" style="--d:120ms" data-i18n="cases.lead">Os cinco casos abaixo são reais e recentes. Valores, nomes de cliente, identificadores e nomes de sistemas internos foram omitidos de propósito: o que interessa aqui é o tipo de problema e o caminho até a solução.</p>
+    <div class="cases">
+
+      <article class="case hl rv">
+        <div class="case-hd"><span class="dom" data-i18n="c5.dom">fluxo comercial</span><h3 data-i18n="c5.h">Exceção comercial que dependia de script em produção</h3></div>
+        <div class="case-bd">
+          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c5.p">Propostas comerciais com taxa ou valor mínimo abaixo do piso não podiam ser submetidas. Cada exceção negociada virava uma cascata: pedido no Slack, eu montando o UPDATE, alguém com acesso ao banco de produção rodando, eu reprocessando a proposta na integração e avisando no report. Três pessoas e duas trocas de mão por pedido. A mediana do report até o fim era de 2h30, mas um em cada quatro passava de 17 horas. Ao revisar a proposta, o valor voltava ao piso, e tudo se repetia.</p></div>
+          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c5.a">Levei o fluxo para dentro do sistema. O comercial registra a exceção na própria proposta, o aprovador decide numa tela com histórico e a aprovação reenvia a proposta à integração sozinha. Uma exceção aprovada passa a valer como piso daquela proposta, então <b>revisões não desfazem mais o ajuste</b>.</p></div>
+          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c5.r"><b>44 pedidos de script em produção</b> em cerca de quatro meses caíram para <b>zero</b>. O retrabalho, que era 38% das atualizações, deixou de existir. Nas três primeiras semanas, 19 solicitações foram abertas por seis pessoas sem passar por engenharia, e toda aprovação ficou auditável.</p></div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-hd"><span class="dom" data-i18n="c1.dom">fechamento financeiro</span><h3 data-i18n="c1.h">Divergência de fechamento financeiro que ninguém sabia explicar</h3></div>
+        <div class="case-bd">
+          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c1.p">A área de negócio apontou que o valor de um evento havia "mudado sozinho" depois do fechamento. Nenhum lançamento tinha sido alterado, e o time não conseguia explicar a diferença.</p></div>
+          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c1.a">Reconstruí o cálculo do fechamento até o extrato e encontrei o mecanismo: o fechamento aplica o piso contratado e estorna a taxa do período, mas esse estorno é <b>uma foto congelada na data do fechamento</b>, enquanto a taxa continua sendo lançada depois. O fechamento estava certo; o que mudava era o extrato posterior.</p></div>
+          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c1.r">Explicação escrita para a área de negócio em linguagem não técnica. Em seguida levantei o padrão no ano e encontrei <b>36 fechamentos afetados</b> pelo mesmo mecanismo, o que transformou um report isolado em um problema dimensionado.</p></div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-hd"><span class="dom" data-i18n="c3.dom">painel administrativo</span><h3 data-i18n="c3.h">Configuração comercial que falhava de forma silenciosa</h3></div>
+        <div class="case-bd">
+          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c3.p">Uma configuração financeira não persistia no painel administrativo. O sintoma parecia falta de permissão, e o time tinha ido por esse caminho.</p></div>
+          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c3.a">Isolei a causa real: o mesmo botão salvava também a conta bancária, que ia com uma chave Pix vazia em vez de nula. O backend recusava essa parte, e o save inteiro abortava sem mensagem clara. Corrigi e publiquei no painel em que o problema foi reportado. No painel mais novo, achei uma segunda causa para o mesmo sintoma e deixei a correção registrada como pendência, porque ela dependia de uma decisão de controle de acesso.</p></div>
+          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c3.r">Configuração voltando a gravar no painel reportado, sem passo manual de contorno. A hipótese inicial de permissão foi descartada com evidência antes de virar retrabalho.</p></div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-hd"><span class="dom" data-i18n="c2.dom">operação</span><h3 data-i18n="c2.h">Backlog operacional de quase dois anos, resolvido e questionado na origem</h3></div>
+        <div class="case-bd">
+          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c2.p">Centenas de solicitações de reembolso presas em status intermediário, algumas paradas havia quase dois anos, com média de seis meses sem conclusão.</p></div>
+          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c2.a">Validei a planilha da operação contra o banco de produção antes de tocar em qualquer registro, identifiquei duplicidades e registros já resolvidos, atualizei em massa apenas o que de fato precisava e reconferi tudo depois da operação. <b>Zero falhas.</b></p></div>
+          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c2.r">Backlog zerado, e a conversa não terminou ali: levantei com a operação como o processo era feito antes, para propor uma solução que elimine a demanda em vez de repetir a correção manual a cada ciclo.</p></div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-hd"><span class="dom" data-i18n="c4.dom">faturamento</span><h3 data-i18n="c4.h">Cobrança duplicada entre fechamento e rotina automática</h3></div>
+        <div class="case-bd">
+          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c4.p">Um mesmo custo estava sendo lançado duas vezes: uma pelo fechamento operacional e outra por uma rotina diária, com impacto financeiro direto no cliente final.</p></div>
+          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c4.a">Rastreei os dois caminhos de lançamento, provei a sobreposição com dados reais e acompanhei a correção do diagnóstico ao ciclo de homologação.</p></div>
+          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c4.r">Duplicidade eliminada na origem, com ciclo de teste registrado cobrindo o cenário para evitar regressão.</p></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="ferramental">
+  <div class="shell">
+    <div class="eyebrow rv" data-i18n="tools.eye">ferramental próprio</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="tools.title">QA assistido por IA, construído para uso real</h2>
+    <p class="lead rv" style="--d:120ms" data-i18n="tools.lead">Três ferramentas de minha autoria, escritas como skills de Claude Code integradas às APIs que o time já usa (ClickUp, GitLab, Slack e banco de dados). A primeira roda para o time inteiro; as outras duas são o meu instrumental de investigação.</p>
+    <div class="tools">
+      <div class="tool rv">
+        <h3 data-i18n="tools.h1">Auditoria de board</h3>
+        <p data-i18n="tools.p1">Varre um board com centenas de tarefas e checa conformidade de processo automaticamente: hierarquia de tarefas, ciclos de teste faltando, tarefas reabertas sem registro de defeito, gargalos por status e limite de trabalho simultâneo. Publica o relatório sozinha no canal do time.</p>
+        <div class="stk" data-i18n="tools.s1">ClickUp API · Slack API · relatório automatizado</div>
+      </div>
+      <div class="tool rv" style="--d:80ms">
+        <h3 data-i18n="tools.h2">Executor de testes de API sob demanda</h3>
+        <p data-i18n="tools.p2">Permite disparar verificações HTTP ad hoc contra a API durante uma investigação, sem precisar montar um projeto de teste só pra confirmar uma hipótese.</p>
+        <div class="stk" data-i18n="tools.s2">HTTP · TypeScript · investigação assistida</div>
+      </div>
+      <div class="tool rv" style="--d:160ms">
+        <h3 data-i18n="tools.h3">Acesso controlado a banco</h3>
+        <p data-i18n="tools.p3">Configura acesso aos bancos de desenvolvimento e à réplica somente leitura de produção, com o caminho seguro padronizado, evitando que cada investigação invente seu próprio atalho.</p>
+        <div class="stk" data-i18n="tools.s3">PostgreSQL · túnel · somente leitura em produção</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="shell">
+    <div class="eyebrow rv" data-i18n="proj.eye">projetos autorais</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="proj.title">Software autoral, fora do trabalho</h2>
+    <div class="projs" style="margin-top:36px">
+      <div class="pr rv">
+        <div class="hd"><h3>Bomba Arena</h3><span class="badge wip" data-i18n="proj.b1">jogável</span></div>
+        <p data-i18n="proj.p1">Jogo de arena no navegador, com single player contra bots, dois jogadores no mesmo teclado e <b>multiplayer online para quatro</b>. Servidor autoritativo em WebSocket, salas por link, espectador para quem entra no meio da rodada e gráficos desenhados inteiramente em código, sem uma única imagem.</p>
+        <div class="stk">TypeScript · monorepo npm workspaces · Vite · Canvas 2D · Node + WebSocket</div>
+        <div class="lks"><a href="https://github.com/Ircaro/bomba-arena" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
+      </div>
+      <div class="pr rv" style="--d:80ms">
+        <div class="hd"><h3>Lumora</h3><span class="badge wip" data-i18n="proj.b2">em construção</span></div>
+        <p data-i18n="proj.p2">RPG 2D em pixel art no navegador, com história, mundo e arte próprios. Projeto mais ambicioso da lista e o que mais exige arquitetura: já passa de cinquenta mil linhas de TypeScript em modo estrito, com <b>39 arquivos de teste</b> cobrindo o motor.</p>
+        <div class="stk" data-i18n="proj.s2">TypeScript estrito · Vite · Canvas · suíte de testes do motor</div>
+      </div>
+      <div class="pr rv">
+        <div class="hd"><h3>CLT x PJ</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
+        <p data-i18n="proj.p3">Calculadora que compara duas propostas de emprego e mostra quanto sobra de verdade em cada uma, com as tabelas oficiais do ano e tudo editável direto na página. Motor de cálculo coberto por testes.</p>
+        <div class="stk" data-i18n="proj.s3">TypeScript · 6 arquivos de teste · sem dependência de runtime</div>
+        <div class="lks"><a class="go" href="https://ircaro.github.io/clt-vs-pj/" target="_blank" rel="noopener" data-i18n="proj.open">Abrir</a><a href="https://github.com/Ircaro/clt-vs-pj" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
+      </div>
+      <div class="pr rv" style="--d:80ms">
+        <div class="hd"><h3 data-i18n="proj.h4">Carteira IRPF</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
+        <p data-i18n="proj.p4">O investidor parte da declaração do ano anterior, lança as movimentações de ações e fundos imobiliários e recebe só a lista do que precisa mudar no programa da Receita, com a discriminação pronta pra colar. O que não mudou, não aparece.</p>
+        <div class="stk" data-i18n="proj.s4">JavaScript · node:test · zero dependências</div>
+        <div class="lks"><a class="go" href="https://ircaro.github.io/irpf-carteira/" target="_blank" rel="noopener" data-i18n="proj.open">Abrir</a><a href="https://github.com/Ircaro/irpf-carteira" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
+      </div>
+    </div>
+    <div class="note rv" data-i18n="proj.n1">Detalhe que eu faço questão de manter: <strong>os projetos onde a regra é crítica têm teste automatizado</strong> (motor do RPG, cálculo trabalhista, apuração de imposto). Não é coincidência, é o mesmo critério que eu aplico no trabalho: automatizar onde o erro custa caro, não onde é fácil.</div>
+    <div class="note rv" data-i18n="proj.n2">Do começo de tudo, em 2021, ficaram dois joguinhos em p5.js que ainda rodam: <a href="pongbolim/">Pongbolim</a> e <a href="flappy-ball/">Flappy Ball</a>.</div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="shell">
+    <div class="eyebrow rv">stack</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="stack.title">O que eu uso de verdade, separado por finalidade</h2>
+    <div class="sk" style="margin-top:36px">
+      <div class="g rv"><h4 data-i18n="stack.g1">automação e teste</h4><div class="pills"><span>PactumJS</span><span>Mocha</span><span>Playwright</span></div></div>
+      <div class="g rv" style="--d:70ms"><h4 data-i18n="stack.g2">linguagens</h4><div class="pills"><span>TypeScript</span><span>JavaScript</span><span>C#</span><span>SQL</span></div></div>
+      <div class="g rv" style="--d:140ms"><h4>backend</h4><div class="pills"><span>Node.js</span><span>.NET</span><span>REST APIs</span><span>WebSocket</span><span>Clean Architecture</span></div></div>
+      <div class="g rv"><h4 data-i18n="stack.g4">dados</h4><div class="pills"><span>PostgreSQL</span><span>SQL Server</span></div></div>
+      <div class="g rv" style="--d:70ms"><h4>front</h4><div class="pills"><span>React</span><span>Tailwind</span></div></div>
+      <div class="g rv" style="--d:140ms"><h4 data-i18n="stack.g6">processo</h4><div class="pills"><span data-i18n="stack.git">Git e GitLab</span><span>ClickUp</span><span data-i18n="stack.cc">Claude Code e MCP</span><span>Shift left</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="trajetoria">
+  <div class="shell two">
+    <div>
+      <div class="eyebrow rv" data-i18n="car.eye">trajetória profissional</div>
+      <h2 class="rv" style="--d:60ms" data-i18n="car.title">De teste manual a engenharia de qualidade</h2>
+      <div class="tl" style="margin-top:36px">
+        <div class="job rv">
+          <div class="when" data-i18n="car.w1">NOV 2022 · ATUAL</div>
+          <h3 data-i18n="car.h1">Zig (The Global Funtech) · Analista de Qualidade</h3>
+          <ul data-i18n="car.u1">
+            <li>Qualidade de uma plataforma de fintech de pagamentos, do refinamento à automação de API e à contribuição no código de produção.</li>
+            <li>Entrego código em cinco repositórios: serviço legado .NET de integração comercial, API principal em Node, painéis administrativos em React e a suíte de automação.</li>
+            <li>Atuo no fluxo que nasce na proposta comercial e propaga dados, via serviço de integração, até a criação de organizações, estabelecimentos, clientes e dados bancários na plataforma.</li>
+            <li>Mantenho a suíte de testes de API cobrindo fluxos críticos de operação, planos comerciais e fechamento operacional.</li>
+            <li>Construí o ferramental de QA assistido por IA que audita o processo do board automaticamente e apoia investigação em banco e API.</li>
+          </ul>
+        </div>
+        <div class="job rv">
+          <div class="when" data-i18n="car.w2">DEZ 2021 · DEZ 2022</div>
+          <h3 data-i18n="car.h2">Avansys Tecnologia · Analista de Qualidade (remoto)</h3>
+          <ul data-i18n="car.u2">
+            <li>Qualidade de sistemas web do setor público, com ênfase em validação e integridade de dados.</li>
+            <li>Testes manuais e exploratórios, reporte de defeitos e proposta de melhorias, atuando além da execução com análise de dados e cenários.</li>
+          </ul>
+        </div>
+        <div class="job rv">
+          <div class="when">NOV 2020 · NOV 2021</div>
+          <h3 data-i18n="car.h3">BRISA · Analista de Qualidade</h3>
+          <ul data-i18n="car.u3">
+            <li>Início da trajetória em QA, atuando também como backup de líder de grupo.</li>
+            <li>Testes funcionais, de regressão, de instalação e exploratórios com foco em aplicação mobile.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="formacao">
+      <div class="eyebrow rv" data-i18n="edu.eye">formação acadêmica</div>
+      <h2 class="rv" style="--d:60ms" data-i18n="edu.title">Base teórica em andamento</h2>
+      <div class="tl" style="margin-top:36px">
+        <div class="job rv">
+          <div class="when">2023 · 2027</div>
+          <h3 data-i18n="edu.h1">Unifacs · Ciência da Computação</h3>
+          <ul><li data-i18n="edu.l1">Bacharelado em andamento, com conclusão prevista para 2027.</li></ul>
+        </div>
+        <div class="job rv">
+          <div class="when" data-i18n="edu.w2">IDIOMAS</div>
+          <h3 data-i18n="edu.h2">Inglês · intermediário</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="shell">
+    <div class="eyebrow rv" data-i18n="ct.eye">contato</div>
+    <h2 class="rv" style="--d:60ms" data-i18n="ct.title">Aberto a conversa sobre posições de QA Engineer, SDET e engenharia de qualidade</h2>
+    <div class="ct" style="margin-top:36px">
+      <a class="rv" href="mailto:ircaro.th@gmail.com"><span>e-mail</span>ircaro.th@gmail.com</a>
+      <a class="rv" style="--d:70ms" href="https://linkedin.com/in/ircaro" target="_blank" rel="noopener"><span>linkedin</span>linkedin.com/in/ircaro</a>
+      <a class="rv" style="--d:140ms" href="https://github.com/Ircaro" target="_blank" rel="noopener"><span>github</span>github.com/Ircaro</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <span data-i18n="ft.note">Números conferidos no GitLab e no histórico de commits. Dados de cliente, valores e identificadores internos omitidos deliberadamente.</span>
+    <span class="mono">© 2026 Írcaro Seixas</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var EN = {
+    "nav.aria":"Sections","lang.aria":"Language","theme.aria":"Toggle light and dark theme",
+    "nav.how":"How I work","nav.cases":"Cases","nav.tools":"Tooling","nav.projects":"Projects","nav.career":"Career","nav.contact":"Contact",
+    "hero.title":"Quality that makes it into the <em>code</em>, not just the bug report.",
+    "hero.role":"Almost six years in QA, almost four of them at a payments fintech.",
+    "hero.pitch":"I started in manual testing and moved into quality engineering. Today I <b>automate API tests</b>, <b>fix in production the defects I find</b> (TypeScript and C#, across five different repositories) and work before the code exists, in refinement and prototyping, so the problem never gets built. I also build my own AI-assisted QA tooling.",
+    "hero.cta1":"See real cases","hero.cta2":"Get in touch","hero.lang":"Intermediate English",
+    "trace.aria":"Illustrative trace of a bug investigation, from report to production","trace.status":"resolved",
+    "trace.s1":"report <span class=\"svc\">· slack</span>","trace.l1":"\"won't save\"",
+    "trace.s2":"reproduce <span class=\"svc\">· qa</span>","trace.l2":"reproduced",
+    "trace.s3":"network <span class=\"svc\">· 3 calls</span>","trace.s5":"root cause <span class=\"svc\">· payload</span>",
+    "trace.f1":"<b>1</b> symptom","trace.f2":"<b>2</b> causes","trace.f3":"<b>0</b> manual workarounds",
+    "trace.cap":"illustrative trace, based on a real case",
+    "num.eye":"by the numbers","num.title":"What shows up in the history, not in a self-description",
+    "num.1":"Merge Requests I authored in the company's GitLab, 79 already merged",
+    "num.2":"different repositories where I ship code, across a .NET backend, Node APIs and React panels",
+    "num.3":"commits in 2026 to the two most critical backend services of the commercial flow",
+    "num.4":"production languages day to day: TypeScript and C#",
+    "num.5":"internal AI-assisted QA tools I built, one of them posting an automatic report to the team",
+    "num.6":"side projects outside work, from a tax calculator to a game engine",
+    "how.eye":"how I work","how.title":"Four fronts, and none of them is just running test cases",
+    "how.t1":"diagnosis","how.h1":"Root cause across systems",
+    "how.p1":"I don't stop at \"it looks wrong on screen\". I follow the data from the front end to the legacy service and the database, and I point to the layer where the defect was born. That's why I'm the person people ask when nobody can explain how a financial flow behaves.",
+    "how.t2":"automation","how.h2":"API tests that survive maintenance",
+    "how.p2":"A suite in PactumJS, Mocha and TypeScript with reusable services, data builders and factories. I refactored the test architecture (from factories to data builders, reorganizing the shared core) precisely to lower the cost of maintaining it.",
+    "how.h3":"Prevention before code exists",
+    "how.p3":"I join refinement and prototyping bringing the technical side: how the front end talks to the back end, what can or cannot live on the client, which integration breaks. A prevented bug never becomes a statistic, but it does become a deadline met.",
+    "how.t4":"tooling","how.h4":"I build the tool that was missing",
+    "how.p4":"When a process depends on human discipline, I automate the check. Board audits, on-demand API test runs and controlled database access became everyday tools, not recommendations in a document.",
+    "cases.eye":"real cases","cases.title":"Fintech work, described without customer data",
+    "cases.lead":"The five cases below are real and recent. Amounts, customer names, identifiers and internal system names were left out on purpose: what matters here is the kind of problem and the path to the solution.",
+    "k.prob":"problem","k.act":"what I did","k.res":"result",
+    "c5.dom":"commercial flow","c5.h":"A commercial exception that depended on production scripts",
+    "c5.p":"Commercial proposals with a fee or minimum below the floor could not be submitted. Every negotiated exception became a cascade: a request on Slack, me writing the UPDATE, someone with production database access running it, me reprocessing the proposal in the integration and replying on the report. Three people and two hand-offs per request. The median from report to done was 2.5 hours, but one in four took more than 17 hours. Whenever the proposal was revised, the value went back to the floor and everything started over.",
+    "c5.a":"I moved the flow into the system. Sales registers the exception on the proposal itself, the approver decides on a screen with history, and the approval resends the proposal to the integration automatically. An approved exception becomes the floor for that proposal, so <b>revisions no longer undo the adjustment</b>.",
+    "c5.r":"<b>44 production script requests</b> in about four months dropped to <b>zero</b>. The rework, 38% of all updates, disappeared. In the first three weeks, six people opened 19 requests without going through engineering, and every approval became auditable.",
+    "c1.dom":"financial closing","c1.h":"A financial closing gap nobody could explain",
+    "c1.p":"The business team reported that an event's amount had \"changed by itself\" after closing. No entry had been edited, and the team couldn't explain the difference.",
+    "c1.a":"I rebuilt the calculation from the closing to the account statement and found the mechanism: the closing applies the contracted floor and reverses the period's fee, but that reversal is <b>a snapshot frozen on the closing date</b>, while the fee keeps being posted afterwards. The closing was right; what changed was the later statement.",
+    "c1.r":"A written explanation for the business team in plain language. Then I mapped the pattern across the year and found <b>36 affected closings</b> with the same mechanism, turning a single report into a sized problem.",
+    "c3.dom":"admin panel","c3.h":"A commercial setting that failed silently",
+    "c3.p":"A financial setting would not persist in the admin panel. The symptom looked like a permission issue, and the team had gone down that path.",
+    "c3.a":"I isolated the real cause: the same button also saved the bank account, which was sent with an empty Pix key instead of null. The backend rejected that part, and the whole save aborted without a clear message. I fixed and shipped it in the panel where the issue was reported. In the newer panel I found a second cause for the same symptom and logged that fix as a follow-up, because it depended on an access-control decision.",
+    "c3.r":"The setting saves again in the reported panel, with no manual workaround. The initial permission hypothesis was ruled out with evidence before it turned into rework.",
+    "c2.dom":"operations","c2.h":"An almost two-year operational backlog, cleared and questioned at the source",
+    "c2.p":"Hundreds of refund requests stuck in an intermediate status, some sitting for almost two years, with an average of six months without completion.",
+    "c2.a":"I validated the operations spreadsheet against the production database before touching any record, found duplicates and already-resolved entries, bulk-updated only what actually needed it and re-checked everything after the operation. <b>Zero failures.</b>",
+    "c2.r":"Backlog cleared, and the conversation didn't end there: I asked operations how the process used to work, to propose a solution that removes the demand instead of repeating the manual fix every cycle.",
+    "c4.dom":"billing","c4.h":"Duplicate charge between closing and an automated routine",
+    "c4.p":"The same cost was being posted twice: once by the operational closing and again by a daily routine, with direct financial impact on the end customer.",
+    "c4.a":"I traced both posting paths, proved the overlap with real data and followed the fix from diagnosis to the acceptance cycle.",
+    "c4.r":"Duplication removed at the source, with a recorded test cycle covering the scenario to prevent regression.",
+    "tools.eye":"my own tooling","tools.title":"AI-assisted QA, built for real use",
+    "tools.lead":"Three tools I wrote as Claude Code skills, integrated with the APIs the team already uses (ClickUp, GitLab, Slack and the database). The first one runs for the whole team; the other two are my investigation kit.",
+    "tools.h1":"Board audit","tools.p1":"Scans a board with hundreds of tasks and checks process compliance automatically: task hierarchy, missing test cycles, tasks reopened without a defect record, bottlenecks by status and work-in-progress limits. It posts the report to the team channel on its own.",
+    "tools.s1":"ClickUp API · Slack API · automated report",
+    "tools.h2":"On-demand API test runner","tools.p2":"Fires ad hoc HTTP checks against the API during an investigation, without setting up a test project just to confirm a hypothesis.",
+    "tools.s2":"HTTP · TypeScript · assisted investigation",
+    "tools.h3":"Controlled database access","tools.p3":"Sets up access to the development databases and the read-only production replica through a standard safe path, so no investigation has to invent its own shortcut.",
+    "tools.s3":"PostgreSQL · tunnel · read-only in production",
+    "proj.eye":"side projects","proj.title":"My own software, outside work",
+    "proj.b1":"playable","proj.b2":"in progress","proj.live":"live","proj.code":"Code","proj.open":"Open",
+    "proj.p1":"A browser arena game with single player against bots, two players on one keyboard and <b>online multiplayer for four</b>. Authoritative WebSocket server, rooms by link, spectator mode for anyone joining mid-round and graphics drawn entirely in code, without a single image.",
+    "proj.p2":"A 2D pixel-art RPG for the browser, with its own story, world and art. The most ambitious project on the list and the one that demands the most architecture: over fifty thousand lines of strict-mode TypeScript, with <b>39 test files</b> covering the engine.",
+    "proj.s2":"strict TypeScript · Vite · Canvas · engine test suite",
+    "proj.p3":"A calculator that compares two job offers under Brazilian rules (CLT employee vs. PJ contractor) and shows what you actually take home with each, using the year's official tables, all editable on the page. The calculation engine is covered by tests.",
+    "proj.s3":"TypeScript · 6 test files · no runtime dependencies",
+    "proj.h4":"IRPF Portfolio","proj.p4":"Investors start from last year's tax return, log their stock and REIT trades and get only the list of what must change in the Brazilian income tax program, with the descriptions ready to paste. What didn't change doesn't show up.",
+    "proj.s4":"JavaScript · node:test · zero dependencies",
+    "proj.n1":"A detail I insist on: <strong>the projects where the rules are critical have automated tests</strong> (the RPG engine, the payroll math, the tax calculation). Not a coincidence, it's the same criterion I use at work: automate where mistakes are expensive, not where it's easy.",
+    "proj.n2":"From the very beginning, in 2021, two small p5.js games still run: <a href=\"pongbolim/\">Pongbolim</a> and <a href=\"flappy-ball/\">Flappy Ball</a>.",
+    "stack.title":"What I actually use, grouped by purpose","stack.g1":"automation and testing","stack.g2":"languages","stack.g4":"data","stack.g6":"process",
+    "stack.git":"Git and GitLab","stack.cc":"Claude Code and MCP",
+    "car.eye":"career","car.title":"From manual testing to quality engineering",
+    "car.w1":"NOV 2022 · PRESENT","car.h1":"Zig (The Global Funtech) · QA Analyst",
+    "car.u1":"<li>Quality for a payments fintech platform, from refinement to API automation and contributions to production code.</li><li>I ship code to five repositories: a legacy .NET commercial integration service, the main Node API, React admin panels and the automation suite.</li><li>I work on the flow that starts with a commercial proposal and propagates data, through an integration service, into the creation of organizations, venues, customers and bank details on the platform.</li><li>I maintain the API test suite covering critical operations, commercial plans and operational closing flows.</li><li>I built the AI-assisted QA tooling that audits the board process automatically and supports database and API investigations.</li>",
+    "car.w2":"DEC 2021 · DEC 2022","car.h2":"Avansys Tecnologia · QA Analyst (remote)",
+    "car.u2":"<li>Quality for public-sector web systems, with an emphasis on data validation and integrity.</li><li>Manual and exploratory testing, defect reporting and improvement proposals, going beyond execution with data and scenario analysis.</li>",
+    "car.h3":"BRISA · QA Analyst",
+    "car.u3":"<li>Start of my QA career, also acting as backup group lead.</li><li>Functional, regression, installation and exploratory testing focused on a mobile app.</li>",
+    "edu.eye":"education","edu.title":"Theoretical foundation in progress",
+    "edu.h1":"Unifacs · Computer Science","edu.l1":"Bachelor's degree in progress, expected to finish in 2027.",
+    "edu.w2":"LANGUAGES","edu.h2":"English · intermediate",
+    "ct.eye":"contact","ct.title":"Open to conversations about QA Engineer, SDET and quality engineering roles",
+    "ft.note":"Numbers checked against GitLab and commit history. Customer data, amounts and internal identifiers deliberately left out."
+  };
+  var META = {
+    pt:{ desc:"Portfólio de Írcaro Seixas, QA Engineer e SDET: automação de testes de API, causa raiz em sistemas financeiros, código de produção e projetos autorais.", lang:"pt-BR" },
+    en:{ desc:"Portfolio of Írcaro Seixas, QA Engineer and SDET: API test automation, root cause in financial systems, production code and side projects.", lang:"en" }
+  };
+
+  var root=document.documentElement;
+  var nodes=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  var ariaNodes=[].slice.call(document.querySelectorAll('[data-i18n-aria]'));
+  nodes.forEach(function(n){ n._pt=n.innerHTML; });
+  ariaNodes.forEach(function(n){ n._pt=n.getAttribute('aria-label'); });
+
+  function setLang(lang, save){
+    var en = lang==='en';
+    nodes.forEach(function(n){ var k=n.getAttribute('data-i18n'); n.innerHTML = en && EN[k]!=null ? EN[k] : n._pt; });
+    ariaNodes.forEach(function(n){ var k=n.getAttribute('data-i18n-aria'); n.setAttribute('aria-label', en && EN[k]!=null ? EN[k] : n._pt); });
+    var m=META[en?'en':'pt'];
+    root.setAttribute('lang', m.lang);
+    var d=document.querySelector('meta[name="description"]'); if(d) d.setAttribute('content', m.desc);
+    [].forEach.call(document.querySelectorAll('[data-lang]'), function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-lang')===lang ? 'true':'false'); });
+    if(save){ try{ localStorage.setItem('pf-lang', lang); }catch(e){} }
+  }
+  [].forEach.call(document.querySelectorAll('[data-lang]'), function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); });
+  });
+  if(root.getAttribute('data-lang-init')==='en') setLang('en', false);
+
+  document.getElementById('themeBtn').addEventListener('click', function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    var tc=document.querySelector('meta[name="theme-color"]'); if(tc) tc.setAttribute('content', next==='light' ? '#fafaf6' : '#0b0a08');
+    try{ localStorage.setItem('pf-theme', next); }catch(e){}
+  });
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function countUp(el){
+    var target=+el.getAttribute('data-count'); if(reduce || !target) return;
+    var t0=null, dur=1100;
+    function step(ts){ if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/dur); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e); if(p<1) requestAnimationFrame(step); }
+    el.textContent='0'; requestAnimationFrame(step);
+  }
+
+  var revealEls=[].slice.call(document.querySelectorAll('.rv'));
+  var trace=document.getElementById('trace');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        en.target.classList.add('in');
+        var c=en.target.querySelector('[data-count]'); if(c) countUp(c);
+        io.unobserve(en.target);
+      });
+    },{ rootMargin:'0px 0px -8% 0px', threshold:0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+    requestAnimationFrame(function(){ setTimeout(function(){ trace.classList.add('go'); }, 60); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+    trace.classList.add('go');
+  }
+
+  var bar=document.getElementById('progress');
+  var layers=[].slice.call(document.querySelectorAll('.layer[data-depth]'));
+  var hero=document.querySelector('.hero');
+  var ticking=false;
+  function onScroll(){
+    var y=window.scrollY||window.pageYOffset;
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.transform='scaleX('+(max>0? Math.min(1,y/max):0)+')';
+    if(!reduce && y < hero.offsetHeight + 200){
+      layers.forEach(function(l){ l.style.transform='translate3d(0,'+(y*parseFloat(l.getAttribute('data-depth'))).toFixed(1)+'px,0)'; });
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(onScroll); } }, { passive:true });
+  onScroll();
+})();
+</script>
+</body>
 </html>

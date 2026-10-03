@@ -1,3 +1,11 @@
-# sample-resume-page
+# ircaro.github.io
 
-Para executar localmente o projeto você pode instalar a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VSCode. Com o plugin instalado, selecione o projeto e clique no botão "Go Live" no canto inferior direito do VSCode. O navegador deve ser aberto apontando para <127.0.0.1:5000> e sua página deve ser exibida.
+Portfólio de Írcaro Seixas, QA Engineer e SDET: https://ircaro.github.io/
+
+Página estática única (`index.html`), sem build e sem dependências. Para rodar local, basta abrir o arquivo no navegador.
+
+Projetos publicados no mesmo domínio:
+
+- [CLT x PJ](https://ircaro.github.io/clt-vs-pj/)
+- [Carteira IRPF](https://ircaro.github.io/irpf-carteira/)
+- [Pongbolim](https://ircaro.github.io/pongbolim/) e [Flappy Ball](https://ircaro.github.io/flappy-ball/), os primeiros experimentos em p5.js
