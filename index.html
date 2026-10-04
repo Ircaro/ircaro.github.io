@@ -6,13 +6,19 @@
 <title>Írcaro Seixas · QA Engineer</title>
 <meta name="description" content="Portfólio de Írcaro Seixas, QA Engineer e SDET: automação de testes de API, causa raiz em sistemas financeiros, código de produção e projetos autorais.">
 <meta name="author" content="Írcaro Seixas">
-<meta name="theme-color" content="#0b0a08">
-<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+<meta name="theme-color" content="#070604">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta property="og:title" content="Írcaro Seixas · QA Engineer">
 <meta property="og:description" content="Qualidade que entra no código, não só no relatório de bug.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ircaro.github.io/">
-<meta property="og:image" content="https://ircaro.github.io/assets/img/profile.jpg">
+<meta property="og:image" content="https://ircaro.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Írcaro Seixas, QA Engineer e SDET">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="pt_BR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,22 +35,22 @@
 </script>
 <style>
   :root{
-    --bg:#0b0a08; --bg2:#121110; --card:#151411; --card2:#11100d; --line:#26241e; --line2:#36332b;
-    --txt:#f5f3ec; --mut:#aba697; --dim:#716c60;
-    --acc:#ffd60a; --acc2:#fff1a8; --fill:#ffd60a; --fill2:#f5f3ec; --fill-ink:#0b0a08;
-    --ok:#4ade80; --warn:#ffd60a; --err:#f87171;
-    --glow:rgba(255,214,10,.10); --glow2:rgba(255,255,255,.05); --gridline:rgba(255,240,200,.055);
+    --bg:#070604; --bg2:#17150f; --card:#100f0c; --card2:#0c0b08; --line:#26231a; --line2:#353124;
+    --txt:#f7f4ec; --mut:#979083; --dim:#6b655a;
+    --acc:#fdb72d; --acc2:#c98f1b; --fill:#fdb72d; --fill2:#f7f4ec; --fill-ink:#070604;
+    --ok:#12b76a; --warn:#fdb72d; --err:#f87171;
+    --glow:rgba(253,183,45,.10); --glow2:rgba(247,244,236,.04); --gridline:rgba(247,244,236,.05);
     --display:"Sora","Segoe UI",system-ui,sans-serif;
     --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,"Cascadia Code",Consolas,monospace;
     color-scheme:dark;
   }
   :root[data-theme="light"]{
-    --bg:#fafaf6; --bg2:#f2f1ea; --card:#ffffff; --card2:#f8f7f1; --line:#e4e2d8; --line2:#cfccbf;
-    --txt:#0e0d0b; --mut:#4a473f; --dim:#7d796c;
-    --acc:#7a5c00; --acc2:#0e0d0b; --fill:#ffd60a; --fill2:#0e0d0b; --fill-ink:#0e0d0b;
-    --ok:#15803d; --warn:#7a5c00; --err:#c2410c;
-    --glow:rgba(255,214,10,.22); --glow2:rgba(0,0,0,.04); --gridline:rgba(20,18,10,.06);
+    --bg:#faf7f0; --bg2:#f4efe3; --card:#ffffff; --card2:#fbf8f1; --line:#e6dfcd; --line2:#d5cbb3;
+    --txt:#1a160e; --mut:#6e6656; --dim:#8c8370;
+    --acc:#9a6700; --acc2:#7a5200; --fill:#fdb72d; --fill2:#1a160e; --fill-ink:#1a160e;
+    --ok:#067647; --warn:#9a6700; --err:#c2410c;
+    --glow:rgba(253,183,45,.20); --glow2:rgba(26,22,14,.04); --gridline:rgba(26,22,14,.06);
     color-scheme:light;
   }
   *{box-sizing:border-box}
@@ -181,7 +187,6 @@
   .case.hl .case-hd{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 9%,var(--card2)),var(--card2))}
 
   .tools,.projs{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-  .projs{grid-template-columns:repeat(2,1fr)}
   .tool,.pr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
   .tool:hover,.pr:hover{border-color:var(--line2);transform:translateY(-2px)}
   .tool h3,.pr h3{font-size:18px;letter-spacing:-.01em}
@@ -227,7 +232,8 @@
 
   @media (max-width:980px){
     .hero-in{grid-template-columns:1fr;gap:40px;padding-block:56px 56px}
-    .stats,.tools,.sk{grid-template-columns:repeat(2,1fr)}
+    .stats,.sk{grid-template-columns:repeat(2,1fr)}
+    .tools,.projs{grid-template-columns:1fr}
     .case-bd{grid-template-columns:1fr}
     .case-bd > div + div{border-left:0;border-top:1px solid var(--line)}
     .two{grid-template-columns:1fr;gap:72px}
@@ -336,12 +342,12 @@
     <div class="eyebrow rv" data-i18n="num.eye">em números</div>
     <h2 class="rv" style="--d:60ms" data-i18n="num.title">O que aparece no histórico, não na autodescrição</h2>
     <div class="stats" style="margin-top:36px">
-      <div class="st rv"><div class="n" data-count="96">96</div><div class="l" data-i18n="num.1">Merge Requests de minha autoria no GitLab da empresa, 79 já mergeados</div></div>
-      <div class="st rv" style="--d:70ms"><div class="n" data-count="5">5</div><div class="l" data-i18n="num.2">repositórios distintos em que entrego código, entre backend .NET, APIs Node e painéis React</div></div>
-      <div class="st rv" style="--d:140ms"><div class="n" data-count="136">136</div><div class="l" data-i18n="num.3">commits em 2026 nos dois serviços de backend mais críticos do fluxo comercial</div></div>
+      <div class="st rv"><div class="n">44 → 0</div><div class="l" data-i18n="num.1">pedidos de script manual em produção eliminados ao levar a exceção de piso para dentro do sistema</div></div>
+      <div class="st rv" style="--d:70ms"><div class="n" data-count="36">36</div><div class="l" data-i18n="num.2">fechamentos afetados, dimensionados a partir de um único report de cliente</div></div>
+      <div class="st rv" style="--d:140ms"><div class="n" data-count="5">5</div><div class="l" data-i18n="num.3">repositórios em que entrego código, entre backend .NET, APIs Node e painéis React</div></div>
       <div class="st rv"><div class="n" data-count="2">2</div><div class="l" data-i18n="num.4">linguagens de produção no dia a dia: TypeScript e C#</div></div>
-      <div class="st rv" style="--d:70ms"><div class="n" data-count="3">3</div><div class="l" data-i18n="num.5">ferramentas internas de QA assistido por IA criadas por mim, uma delas publicando relatório automático para o time</div></div>
-      <div class="st rv" style="--d:140ms"><div class="n" data-count="4">4</div><div class="l" data-i18n="num.6">projetos autorais fora do trabalho, de calculadora de imposto a motor de jogo</div></div>
+      <div class="st rv" style="--d:70ms"><div class="n" data-count="3">3</div><div class="l" data-i18n="num.5">skills de QA com IA que criei para o time inteiro usar</div></div>
+      <div class="st rv" style="--d:140ms"><div class="n" data-count="3">3</div><div class="l" data-i18n="num.6">projetos autorais fora do trabalho, de jogo de cartas online a RPG</div></div>
     </div>
   </div>
 </section>
@@ -379,7 +385,7 @@
   <div class="shell">
     <div class="eyebrow rv" data-i18n="cases.eye">casos reais</div>
     <h2 class="rv" style="--d:60ms" data-i18n="cases.title">Trabalho de fintech, descrito sem dado de cliente</h2>
-    <p class="lead rv" style="--d:120ms" data-i18n="cases.lead">Os cinco casos abaixo são reais e recentes. Valores, nomes de cliente, identificadores e nomes de sistemas internos foram omitidos de propósito: o que interessa aqui é o tipo de problema e o caminho até a solução.</p>
+    <p class="lead rv" style="--d:120ms" data-i18n="cases.lead">Os três casos abaixo são reais e recentes. Valores, nomes de cliente, identificadores e nomes de sistemas internos foram omitidos de propósito: o que interessa aqui é o tipo de problema e o caminho até a solução.</p>
     <div class="cases">
 
       <article class="case hl rv">
@@ -409,24 +415,6 @@
         </div>
       </article>
 
-      <article class="case rv">
-        <div class="case-hd"><span class="dom" data-i18n="c2.dom">operação</span><h3 data-i18n="c2.h">Backlog operacional de quase dois anos, resolvido e questionado na origem</h3></div>
-        <div class="case-bd">
-          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c2.p">Centenas de solicitações de reembolso presas em status intermediário, algumas paradas havia quase dois anos, com média de seis meses sem conclusão.</p></div>
-          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c2.a">Validei a planilha da operação contra o banco de produção antes de tocar em qualquer registro, identifiquei duplicidades e registros já resolvidos, atualizei em massa apenas o que de fato precisava e reconferi tudo depois da operação. <b>Zero falhas.</b></p></div>
-          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c2.r">Backlog zerado, e a conversa não terminou ali: levantei com a operação como o processo era feito antes, para propor uma solução que elimine a demanda em vez de repetir a correção manual a cada ciclo.</p></div>
-        </div>
-      </article>
-
-      <article class="case rv">
-        <div class="case-hd"><span class="dom" data-i18n="c4.dom">faturamento</span><h3 data-i18n="c4.h">Cobrança duplicada entre fechamento e rotina automática</h3></div>
-        <div class="case-bd">
-          <div class="prob"><div class="k" data-i18n="k.prob">problema</div><p data-i18n="c4.p">Um mesmo custo estava sendo lançado duas vezes: uma pelo fechamento operacional e outra por uma rotina diária, com impacto financeiro direto no cliente final.</p></div>
-          <div class="act"><div class="k" data-i18n="k.act">o que fiz</div><p data-i18n="c4.a">Rastreei os dois caminhos de lançamento, provei a sobreposição com dados reais e acompanhei a correção do diagnóstico ao ciclo de homologação.</p></div>
-          <div class="res"><div class="k" data-i18n="k.res">resultado</div><p data-i18n="c4.r">Duplicidade eliminada na origem, com ciclo de teste registrado cobrindo o cenário para evitar regressão.</p></div>
-        </div>
-      </article>
-
     </div>
   </div>
 </section>
@@ -435,7 +423,7 @@
   <div class="shell">
     <div class="eyebrow rv" data-i18n="tools.eye">ferramental próprio</div>
     <h2 class="rv" style="--d:60ms" data-i18n="tools.title">QA assistido por IA, construído para uso real</h2>
-    <p class="lead rv" style="--d:120ms" data-i18n="tools.lead">Três ferramentas de minha autoria, escritas como skills de Claude Code integradas às APIs que o time já usa (ClickUp, GitLab, Slack e banco de dados). A primeira roda para o time inteiro; as outras duas são o meu instrumental de investigação.</p>
+    <p class="lead rv" style="--d:120ms" data-i18n="tools.lead">Três skills de Claude Code que escrevi para o time inteiro usar, integradas às APIs que já fazem parte do dia a dia (ClickUp, GitLab, Slack e banco de dados). Elas ficam no repositório compartilhado de skills do time, onde qualquer pessoa publica as suas e usa as dos outros.</p>
     <div class="tools">
       <div class="tool rv">
         <h3 data-i18n="tools.h1">Auditoria de board</h3>
@@ -462,31 +450,24 @@
     <h2 class="rv" style="--d:60ms" data-i18n="proj.title">Software autoral, fora do trabalho</h2>
     <div class="projs" style="margin-top:36px">
       <div class="pr rv">
-        <div class="hd"><h3>Bomba Arena</h3><span class="badge wip" data-i18n="proj.b1">jogável</span></div>
+        <div class="hd"><h3>Bomba Arena</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
         <p data-i18n="proj.p1">Jogo de arena no navegador, com single player contra bots, dois jogadores no mesmo teclado e <b>multiplayer online para quatro</b>. Servidor autoritativo em WebSocket, salas por link, espectador para quem entra no meio da rodada e gráficos desenhados inteiramente em código, sem uma única imagem.</p>
         <div class="stk">TypeScript · monorepo npm workspaces · Vite · Canvas 2D · Node + WebSocket</div>
-        <div class="lks"><a href="https://github.com/Ircaro/bomba-arena" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
+        <div class="lks"><a class="go" href="https://ircaro.github.io/bomba-arena/" target="_blank" rel="noopener" data-i18n="proj.play">Jogar</a><a href="https://github.com/Ircaro/bomba-arena" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
       </div>
       <div class="pr rv" style="--d:80ms">
+        <div class="hd"><h3>Canastra Limpa</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
+        <p data-i18n="proj.p5">Buraco no navegador contra bots, em dupla com um bot parceiro ou <b>online com até quatro pessoas</b>. Regras configuráveis (lixo aberto ou fechado, coringas, mortos, vulnerável), bots que jogam em dupla e servidor autoritativo em WebSocket, com salas por código e reconexão automática.</p>
+        <div class="stk">TypeScript · monorepo npm workspaces · Vite · Node + WebSocket · Vitest</div>
+        <div class="lks"><a class="go" href="https://ircaro.github.io/canastra-limpa/" target="_blank" rel="noopener" data-i18n="proj.play">Jogar</a><a href="https://github.com/Ircaro/canastra-limpa" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
+      </div>
+      <div class="pr rv" style="--d:160ms">
         <div class="hd"><h3>Lumora</h3><span class="badge wip" data-i18n="proj.b2">em construção</span></div>
-        <p data-i18n="proj.p2">RPG 2D em pixel art no navegador, com história, mundo e arte próprios. Projeto mais ambicioso da lista e o que mais exige arquitetura: já passa de cinquenta mil linhas de TypeScript em modo estrito, com <b>39 arquivos de teste</b> cobrindo o motor.</p>
+        <p data-i18n="proj.p2">RPG 2D em pixel art no navegador, com história, mundo e arte próprios. Projeto mais ambicioso da lista e o que mais exige arquitetura: já passa de cinquenta mil linhas de TypeScript em modo estrito, com <b>mais de 40 arquivos de teste</b> cobrindo o motor.</p>
         <div class="stk" data-i18n="proj.s2">TypeScript estrito · Vite · Canvas · suíte de testes do motor</div>
       </div>
-      <div class="pr rv">
-        <div class="hd"><h3>CLT x PJ</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
-        <p data-i18n="proj.p3">Calculadora que compara duas propostas de emprego e mostra quanto sobra de verdade em cada uma, com as tabelas oficiais do ano e tudo editável direto na página. Motor de cálculo coberto por testes.</p>
-        <div class="stk" data-i18n="proj.s3">TypeScript · 6 arquivos de teste · sem dependência de runtime</div>
-        <div class="lks"><a class="go" href="https://ircaro.github.io/clt-vs-pj/" target="_blank" rel="noopener" data-i18n="proj.open">Abrir</a><a href="https://github.com/Ircaro/clt-vs-pj" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
-      </div>
-      <div class="pr rv" style="--d:80ms">
-        <div class="hd"><h3 data-i18n="proj.h4">Carteira IRPF</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
-        <p data-i18n="proj.p4">O investidor parte da declaração do ano anterior, lança as movimentações de ações e fundos imobiliários e recebe só a lista do que precisa mudar no programa da Receita, com a discriminação pronta pra colar. O que não mudou, não aparece.</p>
-        <div class="stk" data-i18n="proj.s4">JavaScript · node:test · zero dependências</div>
-        <div class="lks"><a class="go" href="https://ircaro.github.io/irpf-carteira/" target="_blank" rel="noopener" data-i18n="proj.open">Abrir</a><a href="https://github.com/Ircaro/irpf-carteira" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
-      </div>
     </div>
-    <div class="note rv" data-i18n="proj.n1">Detalhe que eu faço questão de manter: <strong>os projetos onde a regra é crítica têm teste automatizado</strong> (motor do RPG, cálculo trabalhista, apuração de imposto). Não é coincidência, é o mesmo critério que eu aplico no trabalho: automatizar onde o erro custa caro, não onde é fácil.</div>
-    <div class="note rv" data-i18n="proj.n2">Do começo de tudo, em 2021, ficaram dois joguinhos em p5.js que ainda rodam: <a href="pongbolim/">Pongbolim</a> e <a href="flappy-ball/">Flappy Ball</a>.</div>
+    <div class="note rv" data-i18n="proj.n1">Detalhe que eu faço questão de manter: <strong>nos três projetos, as regras do jogo têm teste automatizado</strong> (motor do RPG, motor do buraco e regras da arena). É o mesmo critério que eu aplico no trabalho: automatizar onde o erro custa caro, não onde é fácil.</div>
   </div>
 </section>
 
@@ -595,12 +576,12 @@
     "trace.f1":"<b>1</b> symptom","trace.f2":"<b>2</b> causes","trace.f3":"<b>0</b> manual workarounds",
     "trace.cap":"illustrative trace, based on a real case",
     "num.eye":"by the numbers","num.title":"What shows up in the history, not in a self-description",
-    "num.1":"Merge Requests I authored in the company's GitLab, 79 already merged",
-    "num.2":"different repositories where I ship code, across a .NET backend, Node APIs and React panels",
-    "num.3":"commits in 2026 to the two most critical backend services of the commercial flow",
+    "num.1":"manual production script requests eliminated by moving the floor exception into the system",
+    "num.2":"affected closings, sized from a single customer report",
+    "num.3":"repositories where I ship code, across a .NET backend, Node APIs and React panels",
     "num.4":"production languages day to day: TypeScript and C#",
-    "num.5":"internal AI-assisted QA tools I built, one of them posting an automatic report to the team",
-    "num.6":"side projects outside work, from a tax calculator to a game engine",
+    "num.5":"AI-assisted QA skills I built for the whole team to use",
+    "num.6":"side projects outside work, from an online card game to an RPG",
     "how.eye":"how I work","how.title":"Four fronts, and none of them is just running test cases",
     "how.t1":"diagnosis","how.h1":"Root cause across systems",
     "how.p1":"I don't stop at \"it looks wrong on screen\". I follow the data from the front end to the legacy service and the database, and I point to the layer where the defect was born. That's why I'm the person people ask when nobody can explain how a financial flow behaves.",
@@ -611,7 +592,7 @@
     "how.t4":"tooling","how.h4":"I build the tool that was missing",
     "how.p4":"When a process depends on human discipline, I automate the check. Board audits, on-demand API test runs and controlled database access became everyday tools, not recommendations in a document.",
     "cases.eye":"real cases","cases.title":"Fintech work, described without customer data",
-    "cases.lead":"The five cases below are real and recent. Amounts, customer names, identifiers and internal system names were left out on purpose: what matters here is the kind of problem and the path to the solution.",
+    "cases.lead":"The three cases below are real and recent. Amounts, customer names, identifiers and internal system names were left out on purpose: what matters here is the kind of problem and the path to the solution.",
     "k.prob":"problem","k.act":"what I did","k.res":"result",
     "c5.dom":"commercial flow","c5.h":"A commercial exception that depended on production scripts",
     "c5.p":"Commercial proposals with a fee or minimum below the floor could not be submitted. Every negotiated exception became a cascade: a request on Slack, me writing the UPDATE, someone with production database access running it, me reprocessing the proposal in the integration and replying on the report. Three people and two hand-offs per request. The median from report to done was 2.5 hours, but one in four took more than 17 hours. Whenever the proposal was revised, the value went back to the floor and everything started over.",
@@ -625,33 +606,19 @@
     "c3.p":"A financial setting would not persist in the admin panel. The symptom looked like a permission issue, and the team had gone down that path.",
     "c3.a":"I isolated the real cause: the same button also saved the bank account, which was sent with an empty Pix key instead of null. The backend rejected that part, and the whole save aborted without a clear message. I fixed and shipped it in the panel where the issue was reported. In the newer panel I found a second cause for the same symptom and logged that fix as a follow-up, because it depended on an access-control decision.",
     "c3.r":"The setting saves again in the reported panel, with no manual workaround. The initial permission hypothesis was ruled out with evidence before it turned into rework.",
-    "c2.dom":"operations","c2.h":"An almost two-year operational backlog, cleared and questioned at the source",
-    "c2.p":"Hundreds of refund requests stuck in an intermediate status, some sitting for almost two years, with an average of six months without completion.",
-    "c2.a":"I validated the operations spreadsheet against the production database before touching any record, found duplicates and already-resolved entries, bulk-updated only what actually needed it and re-checked everything after the operation. <b>Zero failures.</b>",
-    "c2.r":"Backlog cleared, and the conversation didn't end there: I asked operations how the process used to work, to propose a solution that removes the demand instead of repeating the manual fix every cycle.",
-    "c4.dom":"billing","c4.h":"Duplicate charge between closing and an automated routine",
-    "c4.p":"The same cost was being posted twice: once by the operational closing and again by a daily routine, with direct financial impact on the end customer.",
-    "c4.a":"I traced both posting paths, proved the overlap with real data and followed the fix from diagnosis to the acceptance cycle.",
-    "c4.r":"Duplication removed at the source, with a recorded test cycle covering the scenario to prevent regression.",
     "tools.eye":"my own tooling","tools.title":"AI-assisted QA, built for real use",
-    "tools.lead":"Three tools I wrote as Claude Code skills, integrated with the APIs the team already uses (ClickUp, GitLab, Slack and the database). The first one runs for the whole team; the other two are my investigation kit.",
+    "tools.lead":"Three Claude Code skills I wrote for the whole team, integrated with the APIs we already use every day (ClickUp, GitLab, Slack and the database). They live in the team's shared skills repository, where anyone publishes their own and uses everyone else's.",
     "tools.h1":"Board audit","tools.p1":"Scans a board with hundreds of tasks and checks process compliance automatically: task hierarchy, missing test cycles, tasks reopened without a defect record, bottlenecks by status and work-in-progress limits. It posts the report to the team channel on its own.",
     "tools.s1":"ClickUp API · Slack API · automated report",
     "tools.h2":"On-demand API test runner","tools.p2":"Fires ad hoc HTTP checks against the API during an investigation, without setting up a test project just to confirm a hypothesis.",
     "tools.s2":"HTTP · TypeScript · assisted investigation",
     "tools.h3":"Controlled database access","tools.p3":"Sets up access to the development databases and the read-only production replica through a standard safe path, so no investigation has to invent its own shortcut.",
     "tools.s3":"PostgreSQL · tunnel · read-only in production",
-    "proj.eye":"side projects","proj.title":"My own software, outside work",
-    "proj.b1":"playable","proj.b2":"in progress","proj.live":"live","proj.code":"Code","proj.open":"Open",
+    "proj.eye":"side projects","proj.title":"My own software, outside work","proj.b2":"in progress","proj.live":"live","proj.p5":"Buraco (a Brazilian rummy card game) in the browser against bots, paired with a bot partner or <b>online with up to four people</b>. Configurable rules (open or closed discard pile, wild cards, dead hands, vulnerability), bots that play as a team and an authoritative WebSocket server with room codes and automatic reconnection.","proj.play":"Play","proj.code":"Code","proj.open":"Open",
     "proj.p1":"A browser arena game with single player against bots, two players on one keyboard and <b>online multiplayer for four</b>. Authoritative WebSocket server, rooms by link, spectator mode for anyone joining mid-round and graphics drawn entirely in code, without a single image.",
-    "proj.p2":"A 2D pixel-art RPG for the browser, with its own story, world and art. The most ambitious project on the list and the one that demands the most architecture: over fifty thousand lines of strict-mode TypeScript, with <b>39 test files</b> covering the engine.",
+    "proj.p2":"A 2D pixel-art RPG for the browser, with its own story, world and art. The most ambitious project on the list and the one that demands the most architecture: over fifty thousand lines of strict-mode TypeScript, with <b>more than 40 test files</b> covering the engine.",
     "proj.s2":"strict TypeScript · Vite · Canvas · engine test suite",
-    "proj.p3":"A calculator that compares two job offers under Brazilian rules (CLT employee vs. PJ contractor) and shows what you actually take home with each, using the year's official tables, all editable on the page. The calculation engine is covered by tests.",
-    "proj.s3":"TypeScript · 6 test files · no runtime dependencies",
-    "proj.h4":"IRPF Portfolio","proj.p4":"Investors start from last year's tax return, log their stock and REIT trades and get only the list of what must change in the Brazilian income tax program, with the descriptions ready to paste. What didn't change doesn't show up.",
-    "proj.s4":"JavaScript · node:test · zero dependencies",
-    "proj.n1":"A detail I insist on: <strong>the projects where the rules are critical have automated tests</strong> (the RPG engine, the payroll math, the tax calculation). Not a coincidence, it's the same criterion I use at work: automate where mistakes are expensive, not where it's easy.",
-    "proj.n2":"From the very beginning, in 2021, two small p5.js games still run: <a href=\"pongbolim/\">Pongbolim</a> and <a href=\"flappy-ball/\">Flappy Ball</a>.",
+    "proj.n1":"A detail I insist on: <strong>in all three projects, the game rules have automated tests</strong> (the RPG engine, the card game engine and the arena rules). It's the same criterion I use at work: automate where mistakes are expensive, not where it's easy.",
     "stack.title":"What I actually use, grouped by purpose","stack.g1":"automation and testing","stack.g2":"languages","stack.g4":"data","stack.g6":"process",
     "stack.git":"Git and GitLab","stack.cc":"Claude Code and MCP",
     "car.eye":"career","car.title":"From manual testing to quality engineering",
@@ -696,7 +663,7 @@
   document.getElementById('themeBtn').addEventListener('click', function(){
     var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
-    var tc=document.querySelector('meta[name="theme-color"]'); if(tc) tc.setAttribute('content', next==='light' ? '#fafaf6' : '#0b0a08');
+    var tc=document.querySelector('meta[name="theme-color"]'); if(tc) tc.setAttribute('content', next==='light' ? '#faf7f0' : '#070604');
     try{ localStorage.setItem('pf-theme', next); }catch(e){}
   });
 
