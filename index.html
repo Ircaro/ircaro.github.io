@@ -105,6 +105,7 @@
   .chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
     color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 35%,var(--line));background:color-mix(in srgb,var(--acc) 7%,transparent);
     padding:5px 12px;border-radius:99px}
+  .chip abbr{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
   .chip i{width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block;flex:none}
   .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:20px 0 18px}
   .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -304,9 +305,9 @@
 
   <div class="shell hero-in">
     <div>
-      <span class="chip rv"><i></i>SDET · QA Engineer · Salvador, BA</span>
+      <span class="chip rv"><i></i><abbr title="Software Development Engineer in Test">SDET</abbr> · QA Engineer · Salvador, BA</span>
       <h1 class="rv" style="--d:80ms" data-i18n="hero.title">Qualidade que entra no <em>código</em>, não só no relatório de bug.</h1>
-      <p class="role rv" style="--d:160ms" data-i18n="hero.role">Quase seis anos em QA, quase quatro deles numa fintech de pagamentos.</p>
+      <p class="role rv" style="--d:160ms" data-i18n="hero.role"><b>Software Development Engineer in Test.</b> Quase seis anos em QA, quase quatro deles numa fintech de pagamentos.</p>
       <p class="pitch rv" style="--d:220ms" data-i18n="hero.pitch">Comecei em teste manual e migrei para engenharia de qualidade. Hoje eu <b>automatizo testes de API</b>, <b>corrijo em produção o defeito que encontro</b> (TypeScript e C#, em cinco repositórios diferentes) e atuo antes do código existir, em refinamento e protótipo, pra que o problema não chegue a ser construído. Também construo ferramental próprio de QA assistido por IA.</p>
       <div class="ctas rv" style="--d:300ms">
         <a class="btn pri" href="#casos"><span data-i18n="hero.cta1">Ver casos reais</span> <span aria-hidden="true">→</span></a>
@@ -566,7 +567,7 @@
     "nav.aria":"Sections","lang.aria":"Language","theme.aria":"Toggle light and dark theme",
     "nav.how":"How I work","nav.cases":"Cases","nav.tools":"Tooling","nav.projects":"Projects","nav.career":"Career","nav.contact":"Contact",
     "hero.title":"Quality that makes it into the <em>code</em>, not just the bug report.",
-    "hero.role":"Almost six years in QA, almost four of them at a payments fintech.",
+    "hero.role":"<b>Software Development Engineer in Test.</b> Almost six years in QA, almost four of them at a payments fintech.",
     "hero.pitch":"I started in manual testing and moved into quality engineering. Today I <b>automate API tests</b>, <b>fix in production the defects I find</b> (TypeScript and C#, across five different repositories) and work before the code exists, in refinement and prototyping, so the problem never gets built. I also build my own AI-assisted QA tooling.",
     "hero.cta1":"See real cases","hero.cta2":"Get in touch","hero.lang":"Intermediate English",
     "trace.aria":"Illustrative trace of a bug investigation, from report to production","trace.status":"resolved",
