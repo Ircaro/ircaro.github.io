@@ -188,6 +188,7 @@
   .case.hl .case-hd{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 9%,var(--card2)),var(--card2))}
 
   .tools,.projs{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+  .projs{grid-template-columns:repeat(2,1fr)}
   .tool,.pr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
   .tool:hover,.pr:hover{border-color:var(--line2);transform:translateY(-2px)}
   .tool h3,.pr h3{font-size:18px;letter-spacing:-.01em}
@@ -348,7 +349,7 @@
       <div class="st rv" style="--d:140ms"><div class="n" data-count="5">5</div><div class="l" data-i18n="num.3">repositórios em que entrego código, entre backend .NET, APIs Node e painéis React</div></div>
       <div class="st rv"><div class="n" data-count="2">2</div><div class="l" data-i18n="num.4">linguagens de produção no dia a dia: TypeScript e C#</div></div>
       <div class="st rv" style="--d:70ms"><div class="n" data-count="3">3</div><div class="l" data-i18n="num.5">skills de QA com IA que criei para o time inteiro usar</div></div>
-      <div class="st rv" style="--d:140ms"><div class="n" data-count="3">3</div><div class="l" data-i18n="num.6">projetos autorais fora do trabalho, de jogo de cartas online a RPG</div></div>
+      <div class="st rv" style="--d:140ms"><div class="n" data-count="4">4</div><div class="l" data-i18n="num.6">projetos autorais fora do trabalho, de tower defense a jogo de cartas online</div></div>
     </div>
   </div>
 </section>
@@ -462,13 +463,19 @@
         <div class="stk">TypeScript · monorepo npm workspaces · Vite · Node + WebSocket · Vitest</div>
         <div class="lks"><a class="go" href="https://ircaro.github.io/canastra-limpa/" target="_blank" rel="noopener" data-i18n="proj.play">Jogar</a><a href="https://github.com/Ircaro/canastra-limpa" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
       </div>
-      <div class="pr rv" style="--d:160ms">
+      <div class="pr rv">
+        <div class="hd"><h3>Fortim</h3><span class="badge live" data-i18n="proj.live">no ar</span></div>
+        <p data-i18n="proj.p6">Tower defense para navegador e celular, com 5 fases, modo infinito, 6 torres que se especializam, chefe e poderes especiais. A lógica da batalha roda separada da tela e tem testes, inclusive de <b>balanceamento com robôs que jogam as fases</b>. Gráficos e música gerados por código, sem nenhum arquivo de imagem ou som.</p>
+        <div class="stk">TypeScript · Vite · Canvas · Web Audio · Vitest</div>
+        <div class="lks"><a class="go" href="https://ircaro.github.io/fortim/" target="_blank" rel="noopener" data-i18n="proj.play">Jogar</a><a href="https://github.com/Ircaro/fortim" target="_blank" rel="noopener" data-i18n="proj.code">Código</a></div>
+      </div>
+      <div class="pr rv" style="--d:80ms">
         <div class="hd"><h3>Lumora</h3><span class="badge wip" data-i18n="proj.b2">em construção</span></div>
         <p data-i18n="proj.p2">RPG 2D em pixel art no navegador, com história, mundo e arte próprios. Projeto mais ambicioso da lista e o que mais exige arquitetura: já passa de cinquenta mil linhas de TypeScript em modo estrito, com <b>mais de 40 arquivos de teste</b> cobrindo o motor.</p>
         <div class="stk" data-i18n="proj.s2">TypeScript estrito · Vite · Canvas · suíte de testes do motor</div>
       </div>
     </div>
-    <div class="note rv" data-i18n="proj.n1">Detalhe que eu faço questão de manter: <strong>nos três projetos, as regras do jogo têm teste automatizado</strong> (motor do RPG, motor do buraco e regras da arena). É o mesmo critério que eu aplico no trabalho: automatizar onde o erro custa caro, não onde é fácil.</div>
+    <div class="note rv" data-i18n="proj.n1">Detalhe que eu faço questão de manter: <strong>nos quatro projetos, as regras do jogo têm teste automatizado</strong> (motor do RPG, motor do buraco, regras da arena e balanceamento do tower defense). É o mesmo critério que eu aplico no trabalho: automatizar onde o erro custa caro, não onde é fácil.</div>
   </div>
 </section>
 
@@ -582,7 +589,7 @@
     "num.3":"repositories where I ship code, across a .NET backend, Node APIs and React panels",
     "num.4":"production languages day to day: TypeScript and C#",
     "num.5":"AI-assisted QA skills I built for the whole team to use",
-    "num.6":"side projects outside work, from an online card game to an RPG",
+    "num.6":"side projects outside work, from tower defense to an online card game",
     "how.eye":"how I work","how.title":"Four fronts, and none of them is just running test cases",
     "how.t1":"diagnosis","how.h1":"Root cause across systems",
     "how.p1":"I don't stop at \"it looks wrong on screen\". I follow the data from the front end to the legacy service and the database, and I point to the layer where the defect was born. That's why I'm the person people ask when nobody can explain how a financial flow behaves.",
@@ -615,11 +622,11 @@
     "tools.s2":"HTTP · TypeScript · assisted investigation",
     "tools.h3":"Controlled database access","tools.p3":"Sets up access to the development databases and the read-only production replica through a standard safe path, so no investigation has to invent its own shortcut.",
     "tools.s3":"PostgreSQL · tunnel · read-only in production",
-    "proj.eye":"side projects","proj.title":"My own software, outside work","proj.b2":"in progress","proj.live":"live","proj.p5":"Buraco (a Brazilian rummy card game) in the browser against bots, paired with a bot partner or <b>online with up to four people</b>. Configurable rules (open or closed discard pile, wild cards, dead hands, vulnerability), bots that play as a team and an authoritative WebSocket server with room codes and automatic reconnection.","proj.play":"Play","proj.code":"Code","proj.open":"Open",
+    "proj.eye":"side projects","proj.title":"My own software, outside work","proj.b2":"in progress","proj.live":"live","proj.p6":"Tower defense for desktop and mobile browsers, with 5 stages, endless mode, 6 towers that specialize, a boss and special powers. The battle logic runs apart from the screen and is tested, including <b>balancing with bots that play through the stages</b>. Graphics and music generated in code, without a single image or audio file.","proj.p5":"Buraco (a Brazilian rummy card game) in the browser against bots, paired with a bot partner or <b>online with up to four people</b>. Configurable rules (open or closed discard pile, wild cards, dead hands, vulnerability), bots that play as a team and an authoritative WebSocket server with room codes and automatic reconnection.","proj.play":"Play","proj.code":"Code","proj.open":"Open",
     "proj.p1":"A browser arena game with single player against bots, two players on one keyboard and <b>online multiplayer for four</b>. Authoritative WebSocket server, rooms by link, spectator mode for anyone joining mid-round and graphics drawn entirely in code, without a single image.",
     "proj.p2":"A 2D pixel-art RPG for the browser, with its own story, world and art. The most ambitious project on the list and the one that demands the most architecture: over fifty thousand lines of strict-mode TypeScript, with <b>more than 40 test files</b> covering the engine.",
     "proj.s2":"strict TypeScript · Vite · Canvas · engine test suite",
-    "proj.n1":"A detail I insist on: <strong>in all three projects, the game rules have automated tests</strong> (the RPG engine, the card game engine and the arena rules). It's the same criterion I use at work: automate where mistakes are expensive, not where it's easy.",
+    "proj.n1":"A detail I insist on: <strong>in all four projects, the game rules have automated tests</strong> (the RPG engine, the card game engine, the arena rules and the tower defense balancing). It's the same criterion I use at work: automate where mistakes are expensive, not where it's easy.",
     "stack.title":"What I actually use, grouped by purpose","stack.g1":"automation and testing","stack.g2":"languages","stack.g4":"data","stack.g6":"process",
     "stack.git":"Git and GitLab","stack.cc":"Claude Code and MCP",
     "car.eye":"career","car.title":"From manual testing to quality engineering",
